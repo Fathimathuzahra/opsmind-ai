@@ -2,58 +2,32 @@
 
 **Completed Internship Project (Weeks 1-4)**
 
-OpsMind AI is a full-stack MERN application (MongoDB, Express, React, Node.js) designed to ingest Enterprise SOP (Standard Operating Procedure) PDFs and allow users to ask questions about them using Retrieval Augmented Generation (RAG) powered by Google Gemini AI.
+This repository contains the weekly progression of the OpsMind AI project.
 
-## 🚀 Features
+## 📂 Project Organization
 
-### ✅ Week 1: Backend Foundation
-- Robust Node.js/Express Server.
-- Custom PDF Processing & Chunking Engine.
+- **[Week1_Backend_Foundation](/Week1)**: Initial Node.js server with basic in-memory RAG system.
+- **[Week2_AI_Database](/Week2)**: Integration of MongoDB Vector Search and Google Gemini AI.
+- **[Week3_Frontend](/Week3)**: React Frontend application (Full Stack).
+- **[Week4_Production](/Week4)**: Dockerized deployment, Resilience (Offline Mode), and Hybrid Search.
 
-### ✅ Week 2: AI & Persistence
-- **MongoDB Integration**: Validated storage for documents.
-- **Vector Search**: Semantic search using `text-embedding-004`.
-- **RAG**: Intelligent answers using `gemini-1.5-flash`.
+## 🚀 How to Run the Final Version (Week 4)
 
-### ✅ Week 3: Frontend Interface
-- Modern React UI with Drag-and-Drop Upload.
-- Real-time Chat Interface with Source Citations.
+1. Navigate to Week 4:
+   ```bash
+   cd Week4
+   ```
 
-### ✅ Week 4: Production Hardening
-- **Docker Compose**: One-click deployment.
-- **Hybrid Search**: Keyword fallback if AI search misses.
-- **Failover Modes**: "Offline Mode" (In-Memory DB) and "Direct Quote" fallback to ensure zero-crash reliability.
+2. Run with Docker:
+   ```bash
+   docker-compose up --build
+   ```
+   
+3. Access:
+   - Client: `http://localhost:3000`
+   - Server: `http://localhost:5000`
 
-## 🛠️ How to Run
-
-### Option 1: Docker (Recommended)
-Prerequisite: Docker Desktop installed.
-```bash
-docker-compose up --build
-```
-Access the app at `http://localhost:3000`.
-
-### Option 2: Manual Setup
-**1. Start Backend**
-```bash
-cd server
-npm install
-npm start
-```
-
-**2. Start Frontend**
-```bash
-cd client
-npm install
-npm start
-```
-
-## 📂 Project Structure
-- **/client**: React Frontend code.
-- **/server**: Node.js Backend code.
-- **docker-compose.yml**: Container orchestration.
-
-## 🔐 Configuration
-The project uses a `.env` file in the `server` directory for:
+## 🔐 Credentials
+Ensure you have a `.env` file in `Week4/server/` with:
 - `MONGODB_URI`
 - `GEMINI_API_KEY`
